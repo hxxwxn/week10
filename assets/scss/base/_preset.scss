@@ -1,0 +1,281 @@
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    margin: -1px;
+}
+
+
+// ***************** 바로가기 ***************** //
+#skipNav {
+    position: relative;
+    z-index: 3000
+}
+
+#skipNav a {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 138px;
+    border: 1px solid #4ec53d;
+    background: #333;
+    text-align: center
+}
+
+#skipNav a:active,
+#skipNav a:focus {
+    top: 0;
+    text-decoration: none;
+    z-index: 1000
+}
+
+#skipNav span {
+    display: inline-block;
+    padding: 2px 6px 0 0;
+    font-size: 13px;
+    line-height: 26px;
+    color: #fff;
+    letter-spacing: -1px;
+    white-space: nowrap
+}
+
+// ************************************************************ //
+
+
+///////////////////////////// extend
+.common-inner {
+    position: relative;
+    width: 1280px;
+    padding-top: 320px;
+    padding-right: 40px;
+    padding-left: 40px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.common-width {
+    width: 1280px;
+    padding-right: 40px;
+    padding-left: 40px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.link-detail {
+    padding: 25px 75px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #3b89ff;
+    border-radius: 300px;
+    margin-bottom: 20px;
+    transition: .3s;
+    display: inline-block;
+}
+
+///////////////////////////// extend
+
+.sc-info {
+
+    .text-wrap {
+        text-align: left;
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 1.48;
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: #444;
+            line-height: 1.6;
+            margin-top: 40px;
+
+            @include desktop {
+                font-size: 18px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .video-wrap {
+        position: relative;
+        width: 530px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            width: 400px;
+        }
+
+        &::before {
+            animation-name: circle-scale;
+            animation-duration: .7s;
+            animation-timing-function: cubic-bezier(0.42, 0, 0.22, 1.21);
+            opacity: 1;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 530px;
+            height: 530px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            border-radius: 50%;
+            // opacity: 0;
+
+            @include tablet {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        .video-box {
+            position: relative;
+            z-index: 1;
+            background-color: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 6px 50px 0 rgb(4 5 9 / 6%);
+
+            .phone {
+                display: block;
+                margin: 0 auto;
+                position: relative;
+                width: 100%;
+            }
+        }
+
+        .video {
+            width: auto;
+            height: auto;
+
+            video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 13px;
+                border-radius: 50px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .icon {
+        position: absolute;
+        animation-duration: 4s;
+        animation-name: icon-bounce;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        object-fit: contain;
+
+        &.icon1 {
+            top: 207px;
+            left: 6.615vw;
+            width: 145px;
+        }
+
+        &.icon2 {
+            top: 111px;
+            left: 15.104vw;
+            animation-delay: 3s;
+            width: 77px;
+        }
+
+        &.icon3 {
+            display: inline-block;
+            top: 40px;
+            right: 14.792vw;
+        }
+
+        &.icon4 {
+            display: inline-block;
+            top: 93px;
+            right: 6.667vw;
+            animation-delay: 3s;
+        }
+    }
+
+
+
+    .chat,
+    .face {
+        display: block;
+        animation-name: icon-scale;
+        animation-duration: .6s;
+        animation-timing-function: ease-out;
+        opacity: 1;
+        object-fit: contain;
+    }
+
+    .chat {
+        position: absolute;
+        border-radius: 41px;
+        box-shadow: 0 10px 30px 0 rgb(0 0 0 / 14%);
+        height: 70px;
+        z-index: 1;
+
+        &.chat1 {
+            top: 120px;
+            right: 0;
+            animation-delay: .2s;
+        }
+
+        &.chat2 {
+            top: 300px;
+            left: -70px;
+            animation-delay: .6s;
+        }
+
+        &.chat3 {
+            bottom: 95px;
+            right: 0;
+            animation-delay: .4s;
+        }
+
+    }
+
+    .face {
+        position: absolute;
+        border-radius: 36%;
+        box-shadow: 0 10px 40px 0 rgb(0 0 0 / 20%);
+        z-index: 1;
+
+        &.face1 {
+            top: 34px;
+            left: 70px;
+            animation-delay: .2s;
+            width: 100px;
+        }
+
+        &.face2 {
+            top: 184px;
+            right: 34px;
+            animation-delay: .6s;
+            width: 120px;
+        }
+
+        &.face3 {
+            bottom: 56px;
+            left: 10px;
+            animation-delay: .4s;
+            width: 140px;
+        }
+    }
+
+
+
+}
